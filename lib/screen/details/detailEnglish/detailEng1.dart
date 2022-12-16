@@ -1,29 +1,28 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:myfirstproject/constants.dart';
 import 'package:myfirstproject/screen/details/components/body.dart';
 import 'package:myfirstproject/screen/home/components/recomended_book.dart';
 
-class DetailScreen extends StatefulWidget {
-  const DetailScreen({ Key? key }) : super(key: key);
+class DetEng extends StatefulWidget {
+  const DetEng({ Key? key }) : super(key: key);
 
   
 
   @override
-  State<DetailScreen> createState() => _DetailScreenState();
+  State<DetEng> createState() => _DetEngState();
 }
 
-class _DetailScreenState extends State<DetailScreen> {
+class _DetEngState extends State<DetEng> {
   @override
   Widget build(BuildContext context) {
 
     Size DetailSize = MediaQuery.of(context).size;
-    return DetailScreenBook(DetailSize: DetailSize,image: "assets/images/tematik1.png",
-    link:'https://www.lamperan.net/2020/02/buku-siswa-kelas-1-kurikulum-edisi.html',deskripsi: "Deskripsi Singkat Seri Buku Tematik Terpadu merupakan buku teks yang disusun berdasarkan Kurikulum 2013 (Revisi 2016). Dalam buku ini, muatan pelajaran disajikan secara terpadu dengan jam pelajaran sesuai porsinya."
-     ,title: "Tematik 1",);
+    return DetailScreenBook(DetailSize: DetailSize,image: "https://i.pinimg.com/564x/e5/ff/9c/e5ff9c81a77b70cea445a028a438268f.jpg",
+    link:'https://www.academia.edu/37217715/BUKU_BAHASA_INGGRIS_SD_KELAS_4_1',deskripsi: "Deskripsi Singkat Seri Buku Inggris Terpadu merupakan buku teks yang disusun berdasarkan Kurikulum 2013 (Revisi 2016). Dalam buku ini, muatan pelajaran disajikan secara terpadu dengan jam pelajaran sesuai porsinya."
+     ,title: "Smart English 1",);
   }
 }
+
 
 class DetailScreenBook extends StatefulWidget {
   const DetailScreenBook({
@@ -54,7 +53,7 @@ class _DetailScreenBookState extends State<DetailScreenBook> {
         children: [
           Container(child: Hero(
             tag: "Diriku",
-            child: Image.asset(widget.image,
+            child: Image.network(widget.image,
             fit: BoxFit.fitWidth,),
           ),
           ),
@@ -187,7 +186,7 @@ class _DetailScreenBookState extends State<DetailScreenBook> {
                 ),
                 child: Container(width: 100,height: 100,
                   decoration: BoxDecoration(
-                    image: DecorationImage(image: AssetImage(widget.image),
+                    image: DecorationImage(image: NetworkImage(widget.image),
                     fit: BoxFit.cover)
                   ),
                 ),
