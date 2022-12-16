@@ -4,6 +4,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:myfirstproject/constants.dart';
 import 'package:myfirstproject/screen/details/detail_screen.dart';
+import 'package:myfirstproject/screen/home/components/artikel.dart';
+import 'package:myfirstproject/screen/home/components/englishBook.dart';
 
 
 import 'header_with_seacrhbox.dart';
@@ -23,7 +25,7 @@ class Body extends StatelessWidget {
         children: <Widget>[
           HeaderWithSearchBox(size: size),
           TitleWithMoreBtn(
-            title: "Recomended",
+            title: "Buku Tematik Terpadu kelas 1",
             press: (){
               Navigator.push(context, MaterialPageRoute(builder: (context){
                 return DetailScreen();
@@ -32,13 +34,15 @@ class Body extends StatelessWidget {
             ),
             RecomendedBook(),
             TitleWithMoreBtn(
-              title: "Topik Terkini",
+              title: "Artikel Terkini",
               press: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context){
                   return DetailScreen();
                 }));
               }),
-              RecomendedBook()
+              ArtikelPage(),
+              TitleWithMoreBtn(title: "Buku Bahasa Inggris", press: (){}),
+              englishBook()
         ]
       ),
     );

@@ -1,55 +1,86 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:myfirstproject/constants.dart';
+import 'package:myfirstproject/screen/details/components/detailTematik2.dart';
+import 'package:myfirstproject/screen/details/components/detailTematik3.dart';
+import 'package:myfirstproject/screen/details/components/detailTematik4.dart';
 import 'package:myfirstproject/screen/details/detail_screen.dart';
 import 'package:myfirstproject/screen/home/components/body.dart';
 import 'package:myfirstproject/screen/details/detail_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class RecomendedBook extends StatelessWidget {
+class RecomendedBook extends StatefulWidget {
   const RecomendedBook({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<RecomendedBook> createState() => _RecomendedBookState();
+
+
+  
+}
+
+class _RecomendedBookState extends State<RecomendedBook> {
+  
+  
+
+ 
+
+  @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
           recomendedCard(
-            image: "assets/images/buku3.jpg",
-            title: "The Jungle Book",
-            country: "Brazil",
-            price: 440,
+            image: "assets/images/tematik1.png",
+            title: "Diriku",
+            country: "Indonesia",
+            price: 170,
             press:(){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen()));
+             Navigator.push(context, 
+             MaterialPageRoute(builder: (context) => DetailScreen())
+             );
             }
           ),
           recomendedCard(
-            image: "assets/images/buku5.jpg",
-            title: "The Jungle Book",
-            country: "Brazil",
-            price: 440,
-            press:(){},
+            image: "assets/images/tematik2.jpg",
+            title: "Kegemaranku",
+            country: "Indonesia",
+            price: 180,
+            press:(){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> DetailTematik1()));
+            } 
           ),
           recomendedCard(
-            image: "assets/images/buku6.jpg",
-            title: "The Jungle Book",
-            country: "Brazil",
-            price: 440,
-            press:(){},
+            image: "assets/images/tematik3.png",
+            title: "Kegiatanku",
+            country: "Indonesia",
+            price: 125,
+            press:(){
+             Navigator.push(context, MaterialPageRoute(builder: (context)=> DetTematik3()));
+            }
           ),
           recomendedCard(
-            image: "assets/images/buku8.jfif",
-            title: "The Jungle Book",
-            country: "Brazil",
-            price: 440,
-            press:(){},
+            image: "assets/images/tematik4.png",
+            title: "Keluargaku",
+            country: "Indonesia",
+            price: 145,
+            press:(){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> DetTematik4()));
+            },
           ),
         ],
       ),
     );
+    
   }
 }
+
+
 
 class recomendedCard extends StatelessWidget {
   const recomendedCard({
@@ -71,6 +102,7 @@ class recomendedCard extends StatelessWidget {
         top: kDeafultPadding / 2,
         bottom: kDeafultPadding * 2.5,
       ),
+
       width: size.width * 0.4,
       child: Column(
         children: <Widget>[
@@ -100,7 +132,7 @@ class recomendedCard extends StatelessWidget {
                       ),
                       TextSpan(
                         text: "$country",style: TextStyle(
-                          color: Colors.greenAccent,
+                          color: Colors.green,
                         ) 
                       )
                       ],
@@ -119,3 +151,8 @@ class recomendedCard extends StatelessWidget {
   }
 }
 
+Future<void> openUrl(String url,
+    {bool forceWebView = false,bool enableJavaScript = false}
+) async {
+  await launch(url, forceWebView: forceWebView,enableJavaScript: enableJavaScript);
+}

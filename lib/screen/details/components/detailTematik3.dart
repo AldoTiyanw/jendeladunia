@@ -1,29 +1,28 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:myfirstproject/constants.dart';
 import 'package:myfirstproject/screen/details/components/body.dart';
 import 'package:myfirstproject/screen/home/components/recomended_book.dart';
 
-class DetailScreen extends StatefulWidget {
-  const DetailScreen({ Key? key }) : super(key: key);
+class DetTematik3 extends StatefulWidget {
+  const DetTematik3({ Key? key }) : super(key: key);
 
   
 
   @override
-  State<DetailScreen> createState() => _DetailScreenState();
+  State<DetTematik3> createState() => _DetTematik3State();
 }
 
-class _DetailScreenState extends State<DetailScreen> {
+class _DetTematik3State extends State<DetTematik3> {
   @override
   Widget build(BuildContext context) {
 
     Size DetailSize = MediaQuery.of(context).size;
-    return DetailScreenBook(DetailSize: DetailSize,image: "assets/images/tematik1.png",
+    return DetailScreenBook(DetailSize: DetailSize,image: "assets/images/tematik3.png",
     link:'https://www.lamperan.net/2020/02/buku-siswa-kelas-1-kurikulum-edisi.html',deskripsi: "Deskripsi Singkat Seri Buku Tematik Terpadu merupakan buku teks yang disusun berdasarkan Kurikulum 2013 (Revisi 2016). Dalam buku ini, muatan pelajaran disajikan secara terpadu dengan jam pelajaran sesuai porsinya."
-     ,title: "Tematik 1",);
+     ,title: "Kegiatanku",);
   }
 }
+
 
 class DetailScreenBook extends StatefulWidget {
   const DetailScreenBook({
